@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+.left{
+    width:35%;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    background-color: #F64A62;
+}
+.left img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 100px;
+}
+
+.tagline{
+    position: absolute;
+    top:0;
+    padding: 100px 70px;
+    color: #8b0c1b;
+}
+
+.tagline h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.tagline h3{
+    font-size: 25px;
+    font-weight: bolder;
+    line-height: 30px;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.copywrite{
+    font-size: 15px;
+}
+.links{
+    font-size: 25px;
+}
+.links a{
+    color: #8b0c1b;
+    text-decoration: none;
+}
+.right{
+    width: 65%;
+    height: 100%;
+    align-items: center;
+    background-color: white;    
+    position: relative;
+}
+
+.signuplink{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 30px;
+    margin-right: 20px;
+}
+
+.detail{
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%,-50%);
+}
+
+.sign-login-nav{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.inputs{
+    width: 100%;
+}
+.inputs label{
+    display: block;
+}
+*:focus{
+    outline: none;
+}
+.password{
+    width: 60%;
+}
+.password label{
+    display: inline;
+}
+
+.inputs input{
+    width: 60%;
+    border-radius: 10px;
+    font-size: 15px;
+    padding : 10px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: rgb(235, 235, 235);
+    display: block;
+}
+#register-password{
+    margin-bottom: 0;
+}
+#signin,#login{
+    width: 20%;
+    border-radius: 10px; 
+    color: white;
+    background-color: #F64A62;
+    margin-bottom: 50px;
+}
+#signin:hover,#login:hover{
+    background-color:#e77b89;
+    cursor: pointer;
+}
+footer{
+    background-color: white;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.footer-margin{
+    padding:10px;
+    
+}
+
+
+#footer-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* padding-left: 150px; */
+    /* padding-right: 150px; */
+}
+#footer-box span{
+    color:gray;
+    font-size: 18px;
+}
+.links a{
+    padding: 15px;
+    color: grey;
+    font-size: 30px;
+}
+.links a:hover{
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+@media only screen and (max-width:800px){
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100%;
+    }
+}

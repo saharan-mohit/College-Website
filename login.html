@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sign_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Log In | College Website</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="tagline text-center">
+                <h2> College Website</h2>
+                <h3>Discover the world’s top </h3>
+                <h3>Worst Designers & Creatives.</h3>
+            </div>
+            <img src="css/images/login_illustration.jpg">
+            
+        </div>
+        <div class="right">
+            <div class="signuplink">Not a member? <a href="index.html">Sign up now</a></div>
+            <div class="detail">
+                <div class="sign-login-nav">
+                    <h2>Log in to College Website</h2>
+                </div>
+                <div class="inputs">
+                    <label for="email" style="font-weight: bold;">Username or Email Address</label>
+                    <input id="login-email" type="email">
+                    <div class="password">
+                        <label for="password" style="font-weight: bold;"> Password</label>
+                        <a href="" style="float: right;">Forgot Password?</a><br>
+                    </div>
+                    <input id="login-password" type="password"><br>
+                    <input id="login" type="submit" value="Sign In" onclick="login()">
+                </div>
+            </div>
+            <footer class="container-fluid footer-margin">
+                <div class="container text-center" id="footer-box">
+                    
+                    <span>&copy; Rahul & Harshit</span>
+                    <span class="links">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="https://www.linkedin.com/in/rahulyadav00" class="fa fa-linkedin"></a>
+                        <a href="https://github.com/Rahul-Yadav-00" class="fa fa-github"></a>
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="/__/firebase/7.15.5/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.15.5/firebase-auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/authcheck.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Dashboard Menu CSS-->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/menu-dashboard.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/subject.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="css/timetable.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <title>College Website</title>
+  
+</head>
+<body>
+  <div class="container-fluid" id="main-content">
+    <!-- dashboard-menu -->
+    <div class="container-fluid" id="dashboard-menu">
+      <h3>College Website</h3>
+      <ul>
+        <li onclick="dashboard()"><i class="fas fa-th-large"></i>Dashboard</li>
+        <li onclick="schedule()"><i class="fas fa-calendar-day"></i>Today's Schedule</li>
+        <li onclick="timetable()"><i class="fas fa-clipboard-list"></i>Timetable</li>
+        <li onclick="subjects()"><i class="fas fa-book"></i>Subjects</li>
+        <li onclick="events()"><i class="fas fa-calendar-week"></i>Events</li>
+        <li onclick="notification()"><i class="fas fa-bell"></i>Notification</li>
+      </ul>
+      <footer class="container-fluid dashboard-footer-margin">
+        <div class="container dashboard-text-center">
+          <span class="dashboard-links">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/rahulyadav00" class="fab fa-linkedin-in"></a>
+            <a href="https://github.com/Rahul-Yadav-00" class="fab fa-github"></a>
+          </span>
+          <span class="dashboard-copywrite">&copy; Rahul & Harshit</span>
+
+        </div>
+      </footer>
+    </div>
+
+    <!-- right side of the dashboard-->
+    <div class="container-fluid" id="right-part">
+
+      <!-- middle-content-->
+
+      <!--Dashboard-container-->
+      <div class="dashboard-container">
+        <!--Dashboard-->
+        <div class="menu-dashboard">
+          <div class="container-fluid content">
+            <div class="content-nav">
+              <span class="content-name">Dashboard</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+
+            <!--Welcome message for the users-->
+            <div class="intro">
+              <div class="intro-content">
+                <img id="intro-image" src="css/images/intro-image.png"
+                  style=" height:250px; margin-top: -70px; float: right;">
+                <div class="user-intro">
+                  <h3>Welcome back Rahul!</h3>
+                  <h6>You've learned 80% of your goal this week!</h6>
+                  <h6>Keep it up adn inprove your result!</h6>
+                </div>
+              </div>
+            </div>
+
+            <!--User Today's Schedule-->
+            <div class="user-data">
+              <div class="row">
+                <div class="col-md-5 schedule-card">
+                  <div class="schedule">
+                    <div class="d-flex flex-column align-items-center time-table" style="padding-left: 0;">
+                      <h6>Todays Classes</h6>
+                      <div class="d-flex flex-column  classes">
+                        <div class="class" id="class-0">
+                          <span id="class-0-name">OOPs</span>
+                          <span id="class-0-time">time</span>
+                        </div>
+                        <div class="class" id="class-1">
+                          <span id="class-1-name">OOPs</span>
+                          <span id="class-1-time">time</span>
+                        </div>
+                        <div class="class" id="class-2">
+                          <span id="class-2-name">OOPs</span>
+                          <span id="class-2-time">time</span>
+                        </div>
+                        <div class="class" id="class-3">
+                          <span id="class-3-name">OOPs</span>
+                          <span id="class-3-time">time</span>
+                        </div>
+                        <div class="class" id="class-4">
+                          <span id="class-4-name">OOPs</span>
+                          <span id="class-4-time">time</span>
+                        </div>
+                        <div class="class" id="class-5">
+                          <span id="class-5-name">OOPs</span>
+                          <span id="class-5-time">time</span>
+                        </div>
+                        <div class="class" id="class-6">
+                          <span id="class-6-name">OOPs</span>
+                          <span id="class-6-time">time</span>
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+                <div class="col-md-7 subject-attendance-card">
+                  <div class="subject-attendance">
+                    <div class="d-flex flex-column align-items-center  attendance-table">
+                      <div class="heading">
+                        <span class="subject-attendance-nav">Attendance Graph</span>
+                      </div>
+                      <div class="subjects-bar">
+                        <canvas id="myChart"></canvas>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="course-subjects">
+              <div class="subjects-ref">
+                <div class="subject-menu">
+                  <span>Your Courses</span>
+                  <span ><a href=""><i class="fas fa-long-arrow-alt-right"></i></a></span>
+                </div>
+                <div class="menu-dashboard-subject-cards">
+                  <div class="row">
+                    <div class="col-md-4 col-sm-6 subject">
+                      <div class="subject-container" id="subject-container-0">
+                        Subject Name
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 subject">
+                      <div class="subject-container" id="subject-container-1">
+                        Subject Name
+                      </div>
+                    </div>
+                    <div class="col-md-4 extra-subject subject">
+                      <div class="subject-container" id="subject-container-2">
+                        Subject Name
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!--Menu Today's Schedule-->
+        <div class="menu-schedule">
+          <div class="container-fluid content" style="overflow-y: hidden;">
+            <div class="content-nav">
+              <span class="content-name">Today's Schedule</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+            <div class="menu-schedule-cards">
+              <div class="row">
+                <div class="col-md-6 schedule-cards">
+                  <div class="schedule-card" id="schedule-card-0" onclick="showDetail('0');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-0-name">Subject Name</span>
+                      <span id="schedule-card-0-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-0-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-0-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-1" onclick="showDetail('1');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-1-name">Subject Name</span>
+                      <span id="schedule-card-1-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-1-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-1-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-2" onclick="showDetail('2');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-2-name">Subject Name</span>
+                      <span id="schedule-card-2-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-2-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-2-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-3" onclick="showDetail('3');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-3-name">Subject Name</span>
+                      <span id="schedule-card-3-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-3-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-3-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-4" onclick="showDetail('4');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-4-name">Subject Name</span>
+                      <span id="schedule-card-4-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-4-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-4-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-5" onclick="showDetail('5');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-5-name">Subject Name</span>
+                      <span id="schedule-card-5-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-5-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-5-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="schedule-card" id="schedule-card-6" onclick="showDetail('6');">
+                    <div class="schedule-card-nav">
+                      <span id="schedule-card-6-name">Subject Name</span>
+                      <span id="schedule-card-6-code">(Subject code)</span>
+                    </div>
+                    <hr>
+                    <div class="menu-schedule-card-details">
+                      <div class="left-side" style="float:left">
+                        <div>
+                          <span><i class="far fa-clock"></i></span>
+                          <h7 id="schedule-card-6-time">Timing</h7>
+                        </div>
+                        <div>
+                          <span><i class="fas fa-map-marker-alt"></i></span>
+                          <h7 id="schedule-card-6-location">Location</h7>
+                        </div>
+                      </div>
+                      <div class="right-side" style="float: right; width: 120px; height: 50px;">
+                        <canvas class="schedule-subject-card-bar"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 schedule-card-details">
+                  <div class="card-size">
+                    <div class="card-details">
+                      <div class="card-nav">
+                        <h3 id="right-detail-subname">Subject Name</h3>
+                        <hr>
+                        <h6 id="right-detail-teacher">Teacher Name</h6>
+                        <h6>Teacher Room</h6>
+                        <h6 id="right-detail-time">Timings</h6>
+                        <h6 id="right-detail-location">Location</h6>
+                      </div>
+                      <div class="card-bar">
+                        <canvas id="subchart" style="background-color: transparent;" height="80" width="100"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Menu Timetable-->
+        <div class="menu-timetable">
+          <div class="container-fluid content">
+            <div class="content-nav">
+              <span class="content-name">TimeTable</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+            <div class="time-table-background">
+              <div class="time-table-plate">
+                <div class="day-plate">
+                  <!--Monday-->
+                  <span>M <br> O <br> N</span>
+                  <div class="period_plate" id="MON-period-0">
+                    <div class="period">
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display:none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-1">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-2">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-3">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-4">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-5">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="MON-period-6">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  
+
+                </div>
+                <div class="day-plate">
+                  <!-- Tuesday -->
+                  <span>T <br> U <br> E</span>
+                  <div class="period_plate" id="TUE-period-0">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-1">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-2">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-3">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-4">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-5">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="TUE-period-6">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                 
+                </div>
+                  <div class="day-plate">
+                  <!-- wednesday -->
+                  <span>W <br> E <br> D</span>
+                  <div class="period_plate"  id="WED-period-0">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-1">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-2">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-3">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-4">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-5">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="WED-period-6">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="day-plate">
+                  <!-- Thusday -->
+                  <span>T <br> H<br> S</span>
+                  <div class="period_plate" id="THU-period-0">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-1">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-2">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-3">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-4">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-5">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate" id="THU-period-6">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="day-plate">
+                  <!-- Friday -->
+                  <span>F <br> R <br> I</span>
+                  <div class="period_plate" id="FRI-period-0">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-1">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-2">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-3">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-4">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-5">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  <div class="period_plate"  id="FRI-period-6">
+                    <div class="period" >
+                      <div class="timetable-card-nav">
+                        <span id="timetable-card-name">Subject Name</span>
+                      </div>
+                      <hr>
+                      <div class="timetable-card-details">
+                        <span><i class="far fa-clock"></i></span>
+                        <h7 id="timetable-card-time">Timing</h7>
+                      </div>
+                      <div class="timetable-card-details">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <h7 id="timetable-card-location">Location</h7>
+                      </div>
+                    </div>
+                      <div class="no_period" style="display: none;">
+                        <div>Break</div>
+                        <div class="no_timetable-card-details">
+                          <i class="far fa-clock"></i>
+                          <h7 id="timetable-card-time">Timing</h7>
+                        </div>
+            
+                    </div>
+                  </div>
+                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Menu Subjects-->
+        <div class="menu-subjects">
+          <div class="container-fluid content">
+            <div class="content-nav">
+              <span class="content-name">Subjects</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+            <div class="menu-subject-cards">
+              <div style="width: 100%;">
+                <div class="subject-back" id="subject-tiles">
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-0">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-0">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                        <canvas class="menu-subject-linebar" 
+                          style="background-color: transparent;" 
+                          height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-1">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-1">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                      <canvas class="menu-subject-linebar" 
+                        style="background-color: transparent;" 
+                        height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-2">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-2">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6>  -->
+                    </div>
+                    <div class="menu-subject-bar">
+                      <canvas class="menu-subject-linebar" 
+                        style="background-color: transparent;" 
+                        height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-3">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-3">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                        <canvas class="menu-subject-linebar" 
+                          style="background-color: transparent;" 
+                          height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-4">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-4">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                        <canvas class="menu-subject-linebar" 
+                          style="background-color: transparent;" 
+                          height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-5">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-6">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                        <canvas class="menu-subject-linebar" 
+                          style="background-color: transparent;" 
+                          height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <div class="subject-card">
+                    <div class="subject-card-details">
+                      <h3 id="subject-card-subname-6">Subject Name</h3>
+                      <hr>
+                      <h6 id="subject-card-tename-6">Teacher Name</h6>
+                      <h6>Teacher Room</h6>
+                      <!-- <h6>Timings</h6>
+                      <h6>Location</h6> -->
+                    </div>
+                    <div class="menu-subject-bar">
+                        <canvas class="menu-subject-linebar" 
+                          style="background-color: transparent;" 
+                          height="200" width="300"></canvas>
+                    </div>
+                  </div>
+                  <!-- <div class="subject-card">8</div>
+                  <div class="subject-card">9</div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Menu Events-->
+        <div class="menu-events">
+          <div class="container-fluid content">
+            <div class="content-nav">
+              <span class="content-name">Events</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Menu notification-->
+        <div class="menu-notification">
+          <div class="container-fluid content">
+            <div class="content-nav">
+              <span class="content-name">Notification</span>
+              <div class="date-search">
+                <span class="date">1 July 2020, Friday</span>
+                <i id="search" class="fas fa-search"></i>
+                <img id="userShrinkProfile" src="css/images/profile_image.png" alt="Avatar">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- user profile -->
+      <div class="container-fluid" id="profile">
+
+        <!--logout menu-->
+        <div class="logout text-center">
+          <h5>Logout</h5>
+          <a href="" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+
+        <!--profile info-->
+        <div class="profile-photo">
+          <img id="userPhoto" src="css/images/profile_image.png" alt="Avatar">
+        </div>
+        <h5 id="user" class="text-center" style="margin-top: 10px; font-weight: bold;">Rahul Yadav</h5>
+
+        <!--Small subject cards-->
+        <div class="short-subject-card">
+          <div class="subject-info">
+            <span id="subject-name-0">Subject Name</span>
+            <span  id="subject-attendence-0">Percentage</span>
+          </div>
+        </div>
+        <div class="short-subject-card">
+          <div class="subject-info">
+            <span id="subject-name-1">Subject Name</span>
+            <span id="subject-attendance-1" >Percentage</span>
+          </div>
+        </div>
+        <div id="radarchart-AllSubjects">
+          <canvas id="radarChart" width="200px" height="140px"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+  <script src="/__/firebase/7.15.5/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.15.5/firebase-auth.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/dataFill.js"></script>
+  <script src="js/Chart.bundle.js"></script>
+  <script src="js/graphs.js"></script>
+</body>
+
+</html>

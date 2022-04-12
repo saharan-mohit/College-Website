@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sign_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Sign In | College Website</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="tagline text-center">
+                <h2> College Website</h2>
+                <h3>Discover the world’s top </h3>
+                <h3>Worst Designers & Creatives.</h3>
+            </div>
+            <img src="css/images/login_illustration.jpg">
+            
+        </div>
+        <div class="right">
+            <div class="signuplink">Already a member? <a href="login.html">Sign in</a></div>
+            <div class="detail">
+                <div class="sign-login-nav">
+                    <h2>Sign up to College Website</h2>
+                </div>
+                <div class="inputs">
+                    <label for="name" style="font-weight: bold;">Name</label>
+                    <input id="register-name" type="text">
+                    <label for="email" style="font-weight: bold;">Email Address</label>
+                    <input id="register-email" type="email">
+                    <label for="" style="font-weight: bold;">Roll Number</label>
+                    <input id="register-rollnumber" type="number">
+                    <label for="email" style="font-weight: bold;">Department</label>
+                    <input id="register-department" type="text">
+                    <label for="" style="font-weight: bold;">Year</label>
+                    <input id="register-year" type="text">
+                    <div class="password">
+                        <label for="password" style="font-weight: bold;"> Password</label>
+                        <a href="" style="float: right;">Forgot Password?</a><br>
+                    </div>
+                    <input id="register-password" type="password"><br>
+                    <input id="signin" type="submit" value="Sign Up" onclick="register()">
+                </div>
+            </div>
+            <footer class="container-fluid footer-margin">
+                <div class="container text-center" id="footer-box">
+                    
+                    <span>&copy; Rahul & Harshit</span>
+                    <span class="links">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="https://www.linkedin.com/in/rahulyadav00" class="fa fa-linkedin"></a>
+                        <a href="https://github.com/Rahul-Yadav-00" class="fa fa-github"></a>
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="/__/firebase/7.15.5/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.15.5/firebase-auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/authcheck.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>

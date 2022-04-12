@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+    /* background-color: rgb(235, 222, 38); */
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+#main-content{
+    width: 100%;
+    height: 98vh;
+    position: relative;
+    display: flex;
+    
+}
+
+#right-part{
+    position: absolute;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 100vh;
+    padding: 0;
+}
+.dashboard-container{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 0;
+    padding: 0;
+    background-color:#1b262c;
+    display: block;
+    /* overflow-y: scroll; */
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    padding: 0;
+    background-color:#1b262c;
+    color: white;
+    overflow-y: scroll;
+}::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.content-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 45px;
+    text-align: center;
+    /* background-color: rgb(226, 226, 17); */
+}
+.content-nav .content-name{
+    font-size: 20px;
+}
+.date{
+    margin-right: 20px;
+}
+#search{
+    background-color: #293e4b;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#search:hover{
+    background-color:#3e5a6b;
+}
+
+
+#userShrinkProfile{
+    width: 40px;
+    margin-left: 10px;
+    display: none;
+}
+.content .intro{
+    padding:10px 45px;
+    width: 100%;
+    height: 200px;
+    
+}
+.intro .intro-content{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color:#293e4b;
+    
+}
+.user-intro{
+    padding:30px 60px;
+    justify-content: center;
+}
+.user-intro h3{
+    padding-bottom: 10px;
+    font-size: 25px;
+    color: #f7ad92;
+}
+.user-intro h6{
+    font-size: 15px;
+    color:rgb(255, 255, 255);
+}
+.user-data{
+    width: 100%;
+    height: 300px;
+    padding:10px 45px;
+}
+.user-data .row{
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+
+.schedule-card{
+    height: 100%;
+}
+.schedule{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color:#293e4b;
+    color:white;
+    padding: 10px 20px;
+}
+
+
+.schedule div .classes{
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #1b262c;
+    border-radius: 10px;
+}
+.schedule .time-table{
+    height: 100%;
+}
+.schedule div h6{
+    height: 10%;
+    align-self: flex-start;
+    margin-top: 10px;
+    color:#bbe1fa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* font-weight: bold; */
+}
+.schedule div .classes .class{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #293e4b ;
+    margin: 0px 5px;
+    color:white;
+    /* background-color: green; */
+}
+
+.subject-attendance-card{
+    height: 100%;
+}
+.subject-attendance{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color:#293e4b;
+}
+.subject-attendance .attendance-table{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.subject-attendance .attendance-table .heading{
+    position: relative;
+    top:0;
+    width: 90%;
+    height: 10%;
+}
+.subject-attendance-nav{
+    color:#bbe1fa;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.subjects-bar{
+    height: 90%;
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+.course-subjects{
+    /* background-color: white; */
+    height: 120px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px 45px;
+}
+.course-subjects .subjects-ref{
+    /* background-color: white; */
+    height: 100%;
+    width: 100%;
+}
+.subjects-ref .subject-menu{
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+}
+.subject-menu span a i {
+    font-size: 25px;
+    color:white
+}
+.subject-menu span a i:hover {
+    margin-right: 10px;
+    color: #3282b8;
+    transition: all .5s ease;
+}
+.subject{
+    height: 80px;
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+.subject-container{
+    background-color: #293e4b;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    padding:15px
+}
+.menu-events{
+    display: none;
+}
+.menu-notification{
+    display:none;
+}
+.menu-subjects{
+    display:none;
+}
+.menu-schedule{
+    display: none;
+}
+.menu-timetable{
+    display:none;
+}
+@media(max-width:1224px){
+    #profile{
+        display: none;
+    }
+    #userShrinkProfile{
+        display: inline;
+    }
+    .dashboard-container{
+        width: 100%;
+    }
+}
+@media(max-width:800px){
+    #intro-image{
+        display: none;
+    }
+    .user-intro{
+        padding:20px;
+        text-align: left;
+    }
+}
+
+
+
+@media (min-width:900px){
+    #subject-tiles{
+        /* background-color:green; */
+        grid-template-columns: auto auto;
+    }
+}
+
